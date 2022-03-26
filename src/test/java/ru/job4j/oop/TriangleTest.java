@@ -14,7 +14,6 @@ public class TriangleTest {
         Triangle triangle = new Triangle(a, b, c);
         double rsl = triangle.area();
         assertThat(rsl, closeTo(8, 0.001));
-
     }
 
     @Test
@@ -25,8 +24,5 @@ public class TriangleTest {
         Triangle triangle = new Triangle(a, b, c);
         double rsl = triangle.area();
         assertThat(rsl, closeTo(-1, 0.001));
-
     }
-
-
 }

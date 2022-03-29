@@ -32,7 +32,7 @@ public class Library {
         System.out.println("***");
 
         for (Book bk : books) {
-            if (bk.equals(coding)) {
+            if (bk.getName().equals(coding.getName())) {
                 System.out.println(bk.getName());
                 break;
             }

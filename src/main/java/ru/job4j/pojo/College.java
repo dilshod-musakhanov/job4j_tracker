@@ -12,9 +12,11 @@ public class College {
 
         System.out.println("Our student"
                 + student.getName()
-                + " " + student.getSurname()
+                + " "
+                + student.getSurname()
                 + " joined to Java group # "
                 + student.getGroup()
-                + " on " + student.getJoined());
+                + " on "
+                + student.getJoined());
     }
 }

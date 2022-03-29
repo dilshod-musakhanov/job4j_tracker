@@ -10,6 +10,11 @@ public class College {
         student.setGroup(3058);
         student.setJoined(new Date());
 
-        System.out.println("Our student" + student.getName() + " " + student.getSurname() + " joined to Java group # " + student.getGroup() + " on " + student.getJoined());
+        System.out.println("Our student"
+                + student.getName()
+                + " " + student.getSurname()
+                + " joined to Java group # "
+                + student.getGroup()
+                + " on " + student.getJoined());
     }
 }

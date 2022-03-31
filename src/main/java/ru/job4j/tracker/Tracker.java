@@ -21,15 +21,12 @@ public class Tracker {
         Item[] result = new Item[size];
         int count = 0;
         for (int i = 0; i < size; i++) {
-            if (items[i] != null) {
-                if (key.equals(items[i].getName())) {
-                    result[count] = items[i];
-                    count++;
-                }
+            if (key.equals(items[i].getName())) {
+                result[count] = items[i];
+                count++;
             }
         }
         return Arrays.copyOf(result, count);
-
     }
 
     public int indexOf(int id) {

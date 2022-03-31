@@ -6,15 +6,6 @@ import java.time.format.DateTimeFormatter;
 public class Item {
     private int id;
 
-    @Override
-    public String toString() {
-        return "Item{"
-                + "id=" + id
-                + ", name='" + name + '\''
-                + ", created=" + created.format(FORMATTER)
-                + '}';
-    }
-
     private String name;
 
     private LocalDateTime created = LocalDateTime.now();
@@ -31,6 +22,15 @@ public class Item {
     public Item(int id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + ", created=" + created.format(FORMATTER)
+                + '}';
     }
 
     public int getId() {

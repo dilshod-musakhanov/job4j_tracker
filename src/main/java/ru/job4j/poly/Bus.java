@@ -1,6 +1,6 @@
 package ru.job4j.poly;
 
-public class Bus implements Transport {
+public class Bus implements Transport, Vehicle {
 
     private double cost = 1.7;
 
@@ -26,5 +26,15 @@ public class Bus implements Transport {
     @Override
     public double petrol(int petrolLitre) {
         return cost * petrolLitre;
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Bus runs on the road");
+    }
+
+    @Override
+    public void costComparison() {
+        System.out.println("Bus ticket is cheaper than Train or Plane tickets");
     }
 }

@@ -2,7 +2,7 @@ package ru.job4j.poly;
 
 public class Bus implements Transport {
 
-    double cost = 1.7;
+    private double cost = 1.7;
 
     @Override
     public void run() {

@@ -5,17 +5,16 @@ public class FindEl {
         int rsl = -1;
 
         for (int i = 0; i < value.length; i++) {
-            if (key == value[i]) {
+            if (key.equals(value[i])) {
                 rsl = i;
+                break;
             }
         }
 
-        if (rsl != -1) {
-            return rsl;
-        } else {
+        if (rsl == -1) {
             throw new ElementNotFoundException("Element Not Found");
         }
-
+        return rsl;
     }
 
     public static void main(String[] args) {

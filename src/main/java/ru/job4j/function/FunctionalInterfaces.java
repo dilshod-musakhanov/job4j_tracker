@@ -14,13 +14,18 @@ public class FunctionalInterfaces {
         Supplier<List<String>> sup = () -> new ArrayList<>(map.values());
         Consumer<String> con = s -> System.out.println(s);
         Function<String, String> func = s -> s.toUpperCase();
+
         biCon.accept(1, "one");
         biCon.accept(2, "two");
         biCon.accept(3, "three");
         biCon.accept(4, "four");
         biCon.accept(5, "five");
         System.out.println("Elements in map: " + map);
-        System.out.println("There is element #4 : " + biPred.test(4, "four"));
+        for (Integer i : map.keySet()) {
+            if (biPred.test(i, map.get(i))) {
+                System.out.println("key: " + i + " value: " + map.get(i));
+            }
+        }
         List<String> strings = sup.get();
         for (String s : strings) {
             con.accept(s);

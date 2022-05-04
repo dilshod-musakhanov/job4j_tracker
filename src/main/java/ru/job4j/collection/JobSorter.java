@@ -33,5 +33,20 @@ public class JobSorter {
         );
         Collections.sort(jobs3, new JobAscByName().thenComparing(new JobAscByPriority()));
         System.out.println(jobs3);
+
+        List<Job> jobs4 = Arrays.asList(
+                new Job("Fix bug", 1),
+                new Job("Fix bug", 4),
+                new Job("Fix bug", 2),
+                new Job("X task", 0)
+        );
+        jobs.sort(new JobDescByName().thenComparing(new JobDescByPriority()));
+        System.out.println(jobs4);
+
+        Comparator<Job> compareName = Comparator.comparing(Job::getName);
+        Comparator<Job> comparePriority = Comparator.comparingInt(Job::getPriority);
+        Comparator<Job> combine = compareName.thenComparing(comparePriority);
+
+        jobs4.sort(combine);
     }
 }

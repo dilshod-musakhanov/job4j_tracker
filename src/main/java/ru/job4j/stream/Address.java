@@ -37,4 +37,8 @@ public class Address {
                 && Objects.equals(city, address.city)
                 && Objects.equals(street, address.street);
     }
+
+    public String getCity() {
+        return city;
+    }
 }

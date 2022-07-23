@@ -34,7 +34,7 @@ public class StartUITest {
                 new String[] {"0", id, replacedName, "1"}
         );
         List<UserAction> actions = List.of(
-                new EditAction(out),
+                new ReplaceAction(out),
                 new ExitAction(out)
         );
         new StartUI(out).init(in, tracker, actions);
@@ -86,7 +86,7 @@ public class StartUITest {
                 new String[] {"0", String.valueOf(one.getId()), replaceName, "1"}
         );
         List<UserAction> actions = List.of(
-                new EditAction(out),
+                new ReplaceAction(out),
                 new ExitAction(out)
         );
         new StartUI(out).init(in, tracker, actions);
@@ -113,7 +113,7 @@ public class StartUITest {
                 new String[] {"0", "1"}
         );
         List<UserAction> actions = List.of(
-                new ShowAllAction(out),
+                new FindAllAction(out),
                 new ExitAction(out)
         );
         new StartUI(out).init(in, tracker, actions);

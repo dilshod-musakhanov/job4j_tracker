@@ -14,7 +14,7 @@ public class StartUITest {
     public void whenCreateItem() {
         Output out = new StubOutput();
         Input in = new StubInput(new String[] {"0", "Item name", "1"});
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         List<UserAction> actions = List.of(
                 new CreateAction(out),
                 new ExitAction(out)
@@ -26,7 +26,7 @@ public class StartUITest {
     @Test
     public void whenReplaceItem() {
         Output out = new ConsoleOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item item = tracker.add(new Item("Replaced item"));
         String id = String.valueOf(item.getId());
         String replacedName = "New item name";
@@ -44,7 +44,7 @@ public class StartUITest {
     @Test
     public void whenDeleteItem() {
         Output out = new ConsoleOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item item = tracker.add(new Item("Deleted item"));
         String id = String.valueOf(item.getId());
         Input in = new StubInput(
@@ -64,7 +64,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[]{"0"}
         );
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         List<UserAction> actions = List.of(
                 new ExitAction(out)
         );
@@ -79,7 +79,7 @@ public class StartUITest {
     @Test
     public void whenReplaceItemTestOutputIsSuccessfully() {
         Output out = new StubOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item one = tracker.add(new Item("test1"));
         String replaceName = "New Test Name";
         Input in = new StubInput(
@@ -107,7 +107,7 @@ public class StartUITest {
     @Test
     public void whenShowAllItemTestOutputIsSuccessfully() {
         Output out = new StubOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item one = tracker.add(new Item("test1"));
         Input in = new StubInput(
                 new String[] {"0", "1"}
@@ -135,7 +135,7 @@ public class StartUITest {
     @Test
     public void whenFindByNameItemTestOutputIsSuccessfully() {
         Output out = new StubOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item one = tracker.add(new Item("test1"));
         Input in = new StubInput(
                 new String[] {"0", String.valueOf(one.getName()), "1"}
@@ -163,7 +163,7 @@ public class StartUITest {
     @Test
     public void whenFindByIDItemTestOutputIsSuccessfully() {
         Output out = new StubOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item one = tracker.add(new Item("test1"));
         Input in = new StubInput(
                 new String[] {"0", String.valueOf(one.getId()), "1"}
@@ -193,7 +193,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"1", "0"}
         );
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         List<UserAction> actions = List.of(
                 new ExitAction(out)
         );

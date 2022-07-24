@@ -1,0 +1,7 @@
+2022-07-24 14:50:14,595 DEBUG ru.job4j.tracker.SqlTracker:add:70 - Item added: item
+2022-07-24 14:50:14,645 DEBUG ru.job4j.tracker.SqlTracker:findById:207 - item id: 54, item name : item, created: 2022-07-24T14:50:14.575
+2022-07-24 14:50:26,340 DEBUG ru.job4j.tracker.SqlTracker:add:70 - Item added: item
+2022-07-24 14:50:26,392 DEBUG ru.job4j.tracker.SqlTracker:delete:114 - Item with id : 55 has been deleted
+2022-07-24 14:50:41,761 DEBUG ru.job4j.tracker.SqlTracker:add:70 - Item added: item
+2022-07-24 14:50:41,805 DEBUG ru.job4j.tracker.SqlTracker:replace:93 - Item with id: 56 has been replaced with new Item : item id: 0, item name : newItem, created: 2022-07-24T14:50:41.763604700
+2022-07-24 14:50:41,842 DEBUG ru.job4j.tracker.SqlTracker:findById:207 - item id: 56, item name : newItem, created: 2022-07-24T14:50:41.741

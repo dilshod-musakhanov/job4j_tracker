@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -53,28 +54,48 @@ public class SqlTrackerTest {
     @Test
     public void whenSaveItemAndFindByGeneratedIdThenMustBeTheSame() {
         SqlTracker tracker = new SqlTracker(connection);
-        Item item = new Item("item");
-        tracker.add(item);
+        Item item = tracker.add(new Item("item"));
         assertThat(tracker.findById(item.getId()), is(item));
     }
 
     @Test
-    public void whenReplaceItemAndFindByIdGetNameThenMustBeTheSame() {
+    public void whenReplaceItemAndFindByIdAndGetNameThenMustBeTheSame() {
         SqlTracker tracker = new SqlTracker(connection);
-        Item item = new Item("item");
-        tracker.add(item);
+        Item item = tracker.add(new Item("item"));
         Item nItem = new Item("newItem");
-        int id = item.getId();
-        tracker.replace(id, nItem);
-        assertThat(tracker.findById(id).getName(), is(nItem.getName()));
+        tracker.replace(item.getId(), nItem);
+        assertThat(tracker.findById(item.getId()).getName(), is(nItem.getName()));
     }
 
     @Test
     public void whenDeleteItemThenReturnTrue() {
         SqlTracker tracker = new SqlTracker(connection);
-        Item item = new Item("item");
-        tracker.add(item);
-        int id = item.getId();
-        assertThat(tracker.delete(id), is(true));
+        Item item = tracker.add(new Item("item"));
+        assertThat(tracker.delete(item.getId()), is(true));
+    }
+
+    @Test
+    public void whenFindAllThenListItemsAreTheSame() {
+        SqlTracker tracker = new SqlTracker(connection);
+        Item item1 = tracker.add(new Item("item1"));
+        Item item2 = tracker.add(new Item("item2"));
+        List<Item> expected = new ArrayList<>();
+        expected.add(item1);
+        expected.add(item2);
+        assertThat(tracker.findAll(), is(expected));
+    }
+
+    @Test
+    public void whenFindByNameThenItemIsTheSame() {
+        SqlTracker tracker = new SqlTracker(connection);
+        Item item = tracker.add(new Item("item"));
+        assertThat(tracker.findByName(item.getName()), is(List.of(item)));
+    }
+
+    @Test
+    public void whenFindByIdThenItemIsTheSame() {
+        SqlTracker tracker = new SqlTracker(connection);
+        Item item = tracker.add(new Item("item"));
+        assertThat(tracker.findById(item.getId()), is(item));
     }
 }

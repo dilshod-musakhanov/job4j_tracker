@@ -72,3 +72,30 @@
 2022-07-25 05:41:45,797 DEBUG ru.job4j.tracker.SqlTracker:findById:182 - item id: 30, item name : item, created: 2022-07-25T05:41:45.795569
 2022-07-25 05:41:45,798 DEBUG ru.job4j.tracker.SqlTracker:add:73 - Item added: item
 2022-07-25 05:41:45,799 DEBUG ru.job4j.tracker.SqlTracker:delete:114 - Item with id : 31 has been deleted
+2022-07-25 13:43:35,263 DEBUG ru.job4j.tracker.SqlTracker:add:73 - Item added: item
+2022-07-25 13:43:35,266 DEBUG ru.job4j.tracker.SqlTracker:add:73 - Item added: item
+2022-07-25 13:43:35,266 DEBUG ru.job4j.tracker.SqlTracker:add:73 - Item added: item
+2022-07-25 13:43:35,272 DEBUG ru.job4j.tracker.SqlTracker:findByName:159 - [item id: 32, item name : item, created: 2022-07-25T13:43:35.247364, item id: 33, item name : item, created: 2022-07-25T13:43:35.265315, item id: 34, item name : item, created: 2022-07-25T13:43:35.266312]
+2022-07-25 13:46:55,952 DEBUG ru.job4j.tracker.SqlTracker:add:73 - Item added: item
+2022-07-25 13:46:55,958 DEBUG ru.job4j.tracker.SqlTracker:delete:114 - Item with id : 35 has been deleted
+2022-07-25 13:46:55,962 DEBUG ru.job4j.tracker.SqlTracker:findById:180 - Not found by id : 35
+2022-07-25 13:49:04,602 DEBUG ru.job4j.tracker.SqlTracker:add:73 - Item added: item
+2022-07-25 13:49:04,606 DEBUG ru.job4j.tracker.SqlTracker:delete:114 - Item with id : 36 has been deleted
+2022-07-25 13:49:04,611 DEBUG ru.job4j.tracker.SqlTracker:findById:180 - Not found by id : 36
+2022-07-25 13:49:51,998 DEBUG ru.job4j.tracker.SqlTracker:add:73 - Item added: item
+2022-07-25 13:49:52,001 DEBUG ru.job4j.tracker.SqlTracker:add:73 - Item added: item
+2022-07-25 13:49:52,002 DEBUG ru.job4j.tracker.SqlTracker:add:73 - Item added: item
+2022-07-25 13:49:52,015 DEBUG ru.job4j.tracker.SqlTracker:findByName:159 - [item id: 37, item name : item, created: 2022-07-25T13:49:51.962196, item id: 38, item name : item, created: 2022-07-25T13:49:52.000094, item id: 39, item name : item, created: 2022-07-25T13:49:52.001091]
+2022-07-25 13:49:52,021 DEBUG ru.job4j.tracker.SqlTracker:add:73 - Item added: item1
+2022-07-25 13:49:52,022 DEBUG ru.job4j.tracker.SqlTracker:add:73 - Item added: item2
+2022-07-25 13:49:52,022 DEBUG ru.job4j.tracker.SqlTracker:findAll:135 - [item id: 40, item name : item1, created: 2022-07-25T13:49:52.020040, item id: 41, item name : item2, created: 2022-07-25T13:49:52.021037]
+2022-07-25 13:49:52,023 DEBUG ru.job4j.tracker.SqlTracker:add:73 - Item added: item
+2022-07-25 13:49:52,025 DEBUG ru.job4j.tracker.SqlTracker:findById:182 - item id: 42, item name : item, created: 2022-07-25T13:49:52.023034
+2022-07-25 13:49:52,026 DEBUG ru.job4j.tracker.SqlTracker:add:73 - Item added: item
+2022-07-25 13:49:52,027 DEBUG ru.job4j.tracker.SqlTracker:replace:95 - Item with id: 43 has been replaced with new Item : item id: 0, item name : newItem, created: 2022-07-25T13:49:52.026025400
+2022-07-25 13:49:52,027 DEBUG ru.job4j.tracker.SqlTracker:findById:182 - item id: 43, item name : newItem, created: 2022-07-25T13:49:52.026025
+2022-07-25 13:49:52,028 DEBUG ru.job4j.tracker.SqlTracker:add:73 - Item added: item
+2022-07-25 13:49:52,029 DEBUG ru.job4j.tracker.SqlTracker:findById:182 - item id: 44, item name : item, created: 2022-07-25T13:49:52.028020
+2022-07-25 13:49:52,029 DEBUG ru.job4j.tracker.SqlTracker:add:73 - Item added: item
+2022-07-25 13:49:52,030 DEBUG ru.job4j.tracker.SqlTracker:delete:114 - Item with id : 45 has been deleted
+2022-07-25 13:49:52,031 DEBUG ru.job4j.tracker.SqlTracker:findById:180 - Not found by id : 45

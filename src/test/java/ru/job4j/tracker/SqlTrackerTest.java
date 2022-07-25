@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Properties;
 
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.*;
 
 public class SqlTrackerTest {
@@ -71,7 +72,8 @@ public class SqlTrackerTest {
     public void whenDeleteItemThenReturnTrue() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item = tracker.add(new Item("item"));
-        assertThat(tracker.delete(item.getId()), is(true));
+        tracker.delete(item.getId());
+        assertThat(tracker.findById(item.getId()), is(nullValue()));
     }
 
     @Test
@@ -88,8 +90,10 @@ public class SqlTrackerTest {
     @Test
     public void whenFindByNameThenItemIsTheSame() {
         SqlTracker tracker = new SqlTracker(connection);
-        Item item = tracker.add(new Item("item"));
-        assertThat(tracker.findByName(item.getName()), is(List.of(item)));
+        Item item1 = tracker.add(new Item("item"));
+        Item item2 = tracker.add(new Item("item"));
+        Item item3 = tracker.add(new Item("item"));
+        assertThat(tracker.findByName(item1.getName()), is(List.of(item1, item2, item3)));
     }
 
     @Test

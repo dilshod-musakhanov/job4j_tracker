@@ -73,7 +73,7 @@ public class SqlTracker implements Store, AutoCloseable {
                 LOG.debug("Item added: {}", item.getName());
             }
         } catch (SQLException e) {
-            LOG.error(String.valueOf(e));
+            LOG.error("Exception in add()", e);
         }
         return item;
     }
@@ -95,7 +95,7 @@ public class SqlTracker implements Store, AutoCloseable {
                 LOG.debug("Item with id: {} has been replaced with new Item : {}", id, item);
             }
         } catch (SQLException e) {
-            LOG.error(String.valueOf(e));
+            LOG.error("Exception in replace()", e);
         }
         return flag;
     }
@@ -114,7 +114,7 @@ public class SqlTracker implements Store, AutoCloseable {
                 LOG.debug("Item with id : {} has been deleted", id);
             }
         } catch (SQLException e) {
-            LOG.error(String.valueOf(e));
+            LOG.error("Exception in delete()", e);
         }
         return flag;
     }
@@ -136,7 +136,7 @@ public class SqlTracker implements Store, AutoCloseable {
                 }
             }
         } catch (SQLException e) {
-            LOG.error(String.valueOf(e));
+            LOG.error("Exception in findAll()", e);
         }
 
         return items;
@@ -160,7 +160,7 @@ public class SqlTracker implements Store, AutoCloseable {
                 }
             }
         } catch (SQLException e) {
-            LOG.error(String.valueOf(e));
+            LOG.error("Exception in findByName()", e);
         }
         return items;
     }
@@ -183,7 +183,7 @@ public class SqlTracker implements Store, AutoCloseable {
                 }
             }
         } catch (SQLException e) {
-            LOG.error(String.valueOf(e));
+            LOG.error("Exception in findById()", e);
         }
         return searchedItem;
     }

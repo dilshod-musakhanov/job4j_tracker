@@ -1,24 +1,27 @@
 package ru.job4j.tracker;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Objects;
 
-@Data
-@EqualsAndHashCode
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@RequiredArgsConstructor
 public class Item {
+    @NonNull
+    @Getter
+    @Setter
+    @EqualsAndHashCode.Include
     private int id;
 
-    @EqualsAndHashCode.Exclude
+    @Getter
+    @Setter
     private String name;
 
-    @EqualsAndHashCode.Exclude
+    @Getter
+    @Setter
     private LocalDateTime created = LocalDateTime.now();
 
-    @EqualsAndHashCode.Exclude
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
 
     public Item() {

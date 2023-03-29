@@ -9,9 +9,11 @@ import java.time.format.DateTimeFormatter;
 @Entity
 @Table(name = "items")
 @Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
     private int id;
     private String name;
     private LocalDateTime created = LocalDateTime.now();

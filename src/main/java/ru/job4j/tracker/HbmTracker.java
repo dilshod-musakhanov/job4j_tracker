@@ -74,7 +74,7 @@ public class HbmTracker implements Store, AutoCloseable {
             transaction = session.beginTransaction();
             Item oldItem = session.get(Item.class, id);
             if (oldItem != null) {
-                session.createQuery("DELETE Item WHERE id = :FId")
+                session.createQuery("DELETE Item WHERE id = :fId")
                                 .setParameter("fId", id).executeUpdate();
                 transaction.commit();
                 result = true;
@@ -118,7 +118,7 @@ public class HbmTracker implements Store, AutoCloseable {
         List<Item> items;
         try {
             transaction = session.beginTransaction();
-            items = session.createQuery("FROM items as i WHERE i.name = :fKey", Item.class)
+            items = session.createQuery("FROM Item as i WHERE i.name = :fKey", Item.class)
                     .setParameter("fKey", key)
                     .list();
             transaction.commit();
@@ -142,7 +142,7 @@ public class HbmTracker implements Store, AutoCloseable {
         try {
             transaction = session.beginTransaction();
             Query<Item> query = session.createQuery(
-                            "FROM items as i WHERE i.id = :fId", Item.class)
+                            "FROM Item as i WHERE i.id = :fId", Item.class)
                     .setParameter("fId", id);
             item = query.uniqueResult();
             transaction.commit();
@@ -161,4 +161,5 @@ public class HbmTracker implements Store, AutoCloseable {
     public void close() throws Exception {
         StandardServiceRegistryBuilder.destroy(registry);
     }
+
 }

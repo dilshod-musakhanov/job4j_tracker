@@ -50,10 +50,8 @@ public class HbmTracker implements Store, AutoCloseable {
                     .setParameter("fName", item.getName())
                     .setParameter("fId", id)
                     .executeUpdate();
-            if (rowsUpdated > 0) {
-                transaction.commit();
-                result = true;
-            }
+            result = rowsUpdated > 0;
+            transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
@@ -72,13 +70,10 @@ public class HbmTracker implements Store, AutoCloseable {
         boolean result = false;
         try {
             transaction = session.beginTransaction();
-            Item oldItem = session.get(Item.class, id);
-            if (oldItem != null) {
-                session.createQuery("DELETE Item WHERE id = :fId")
+            int rowsUpdated = session.createQuery("DELETE Item WHERE id = :fId")
                                 .setParameter("fId", id).executeUpdate();
-                transaction.commit();
-                result = true;
-            }
+            result = rowsUpdated > 0;
+            transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();

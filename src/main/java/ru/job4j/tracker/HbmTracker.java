@@ -157,4 +157,19 @@ public class HbmTracker implements Store, AutoCloseable {
         StandardServiceRegistryBuilder.destroy(registry);
     }
 
+    public static void main(String[] args) throws Exception {
+        HbmTracker hbmTracker = new HbmTracker();
+        Item newItemTest = new Item(1, "newItemTest");
+        Item replacedItemTest = new Item(1, "replacedItemTest");
+        System.out.println("*** add new Item (newItemTest) " + hbmTracker.add(newItemTest));
+        System.out.println("*** find all items " + hbmTracker.findAll());
+        System.out.println("*** find by id (newItemTest.getId) " + hbmTracker.findById(newItemTest.getId()));
+        System.out.println("*** find by name (newItemTest.getName) " + hbmTracker.findByName(newItemTest.getName()));
+        System.out.println("*** replace newItemTest by replacedItemTest " + hbmTracker.replace(newItemTest.getId(), replacedItemTest));
+        System.out.println("*** find all items again " + hbmTracker.findAll());
+        System.out.println("*** delete by id (newItemTest.getId) " + hbmTracker.delete(newItemTest.getId()));
+        System.out.println("*** delete by id (replacedItemTest.getId) " + hbmTracker.delete(replacedItemTest.getId()));
+        System.out.println("*** find all items again " + hbmTracker.findAll());
+        hbmTracker.close();
+    }
 }
